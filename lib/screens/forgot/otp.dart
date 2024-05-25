@@ -22,7 +22,7 @@ class SignInScreen extends StatelessWidget {
               SizedBox(height: 20), // Adjust the height to reduce the gap
               _inputField(context),
               SizedBox(height: 10), // Adjust the height to reduce the gap
-              _signup(context),
+              // _signup(context),
             ],
           ),
         ),
@@ -37,7 +37,7 @@ class SignInScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Hi, Welcome!👋",
+            "OTP Verification",
             style: TextStyle(
               fontFamily: GoogleFonts.poppins().fontFamily,
               color: Color.fromARGB(255, 221, 230, 237),
@@ -121,7 +121,7 @@ class SignInScreen extends StatelessWidget {
               backgroundColor: Color.fromARGB(255, 157, 178, 191),
             ),
             child: const Text(
-              "Login",
+              "Continue",
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),
@@ -130,27 +130,27 @@ class SignInScreen extends StatelessWidget {
     );
   }
 
-  _signup(context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10), // Adjust the padding to reduce the gap
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            "Don't have an account? ",
-            style: TextStyle(color: Color.fromARGB(255, 157, 178, 191)),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => signupscreen()));
-            },
-            child: const Text(
-              "Sign Up",
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // _signup(context) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(bottom: 10), // Adjust the padding to reduce the gap
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         const Text(
+  //           "Don't have an account? ",
+  //           style: TextStyle(color: Color.fromARGB(255, 157, 178, 191)),
+  //         ),
+  //         TextButton(
+  //           onPressed: () {
+  //             Navigator.push(context, MaterialPageRoute(builder: (context) => signupscreen()));
+  //           },
+  //           child: const Text(
+  //             "Sign Up",
+  //             style: TextStyle(color: Colors.white),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

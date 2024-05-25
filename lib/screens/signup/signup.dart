@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:perpus1/screens/forgot/forgot.dart';
+import 'package:perpus1/screens/signin/signin.dart';
 import 'package:perpus1/screens/signup/signup.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class signupscreen extends StatelessWidget {
+  const signupscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class SignInScreen extends StatelessWidget {
               SizedBox(height: 20), // Adjust the height to reduce the gap
               _inputField(context),
               SizedBox(height: 10), // Adjust the height to reduce the gap
-              _signup(context),
+              _signin(context),
             ],
           ),
         ),
@@ -37,20 +37,12 @@ class SignInScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Hi, Welcome!👋",
+            "Sign Up",
             style: TextStyle(
               fontFamily: GoogleFonts.poppins().fontFamily,
               color: Color.fromARGB(255, 221, 230, 237),
               fontSize: 30,
               fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            "Please enter your username/email and \npassword to sign in",
-            style: TextStyle(
-              fontFamily: GoogleFonts.poppins().fontFamily,
-              color: Color.fromARGB(255, 221, 230, 237),
-              fontSize: 16,
             ),
           ),
         ],
@@ -67,7 +59,22 @@ class SignInScreen extends StatelessWidget {
           TextField(
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-              hintText: "Username/Email",
+              hintText: "Username",
+              hintStyle: TextStyle(color: Colors.white),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(18),
+                borderSide: BorderSide.none,
+              ),
+              fillColor: Colors.black.withOpacity(0.10),
+              filled: true,
+              prefixIcon: const Icon(Icons.person, color: Colors.white),
+            ),
+          ),
+          const SizedBox(height: 10),
+          TextField(
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              hintText: "Email",
               hintStyle: TextStyle(color: Colors.white),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
@@ -94,23 +101,7 @@ class SignInScreen extends StatelessWidget {
             ),
             obscureText: true,
           ),
-          const SizedBox(height: 10),
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Forgot()));
-              },
-              child: Text(
-                "Forgot password?",
-                style: TextStyle(
-                  fontFamily: GoogleFonts.poppins().fontFamily,
-                  color: Color.fromARGB(255, 157, 178, 191),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
@@ -121,7 +112,7 @@ class SignInScreen extends StatelessWidget {
               backgroundColor: Color.fromARGB(255, 157, 178, 191),
             ),
             child: const Text(
-              "Login",
+              "Sign Up",
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),
@@ -130,22 +121,22 @@ class SignInScreen extends StatelessWidget {
     );
   }
 
-  _signup(context) {
+  _signin(context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10), // Adjust the padding to reduce the gap
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            "Don't have an account? ",
+            "Already have an account? ",
             style: TextStyle(color: Color.fromARGB(255, 157, 178, 191)),
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => signupscreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen()));
             },
             child: const Text(
-              "Sign Up",
+              "Sign In",
               style: TextStyle(color: Colors.white),
             ),
           ),
